@@ -34,11 +34,12 @@ public class MailServiceImpl implements MailService {
 			
 			helper.setTo(email.getTo());
 			helper.setSubject("Test Message");
+			//"text/html; charset=utf-8"
 			helper.setText(email.getBody());
 			
-			FileSystemResource file = new FileSystemResource(
+			/*FileSystemResource file = new FileSystemResource(
 					new File("H:/temp/HDL-LDL.pdf"));
-			helper.addAttachment("Sugar", file);
+			helper.addAttachment("Sugar", file);*/
 			mailSenderImpl.send(message);
 		} catch (MessagingException e) {
 			e.printStackTrace();
